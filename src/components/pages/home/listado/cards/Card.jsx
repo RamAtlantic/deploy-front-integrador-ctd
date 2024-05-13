@@ -7,7 +7,7 @@ import { CardActionArea } from "@mui/material";
 
 export default function ActionAreaCard({ datos }) {
   return (
-    <Card sx={{ width: 250 }}>
+    <Card sx={{ maxWidth: 275 }}>
       <CardActionArea>
         <CardMedia
           component="img"
@@ -17,10 +17,10 @@ export default function ActionAreaCard({ datos }) {
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            <h1 class="poetsen-one-regular">{datos.nombre}</h1>
+            {datos.nombre}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            <h3 class="poetsen-one-regular2">{datos.descripcion}</h3>
+            {datos.descripcion}
           </Typography>
         </CardContent>
       </CardActionArea>
