@@ -16,7 +16,7 @@ const Listado = () => {
   console.log(lugares);
 
   return (
-    <div className="listado-container">
+    <div class="listado-container">
       {lugares.map((lugar) => (
         <ActionAreaCard key={lugar.id} datos={lugar} />
       ))}
