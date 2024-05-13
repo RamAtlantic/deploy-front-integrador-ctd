@@ -49,7 +49,7 @@ const Formulario = () => {
       }
 
       // Realiza la solicitud HTTP POST con el cuerpo construido
-      const response = await fetch("http://18.228.226.201/lugares/agregar", {
+      const response = await fetch("https://18.228.226.201/lugares/agregar", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
