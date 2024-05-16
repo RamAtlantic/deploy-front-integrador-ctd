@@ -7,6 +7,18 @@ import { CardActionArea } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 
 export default function CardMobile({ space, arrayFotos }) {
+  const [fotoPortada, setFotoPortada] = React.useState(false);
+
+  React.useEffect(() => {
+    const esperarFotos = async (arrayFotos) => {
+      if (arrayFotos.length > 0) {
+        setFotoPortada(arrayFotos[0].rutaFoto);
+      }
+    };
+    esperarFotos(arrayFotos);
+  }, [arrayFotos]);
+
+  console.log(arrayFotos);
   const navigate = useNavigate();
 
   const openSpace = () => {
@@ -20,7 +32,7 @@ export default function CardMobile({ space, arrayFotos }) {
           component="img"
           width="270px"
           height="140"
-          image={arrayFotos[0].rutaFoto} // Aquí asumo que siempre habrá al menos una foto
+          image={fotoPortada ? fotoPortada : null} // Aquí asumo que siempre habrá al menos una foto
           alt={space.nombre}
         />
 
