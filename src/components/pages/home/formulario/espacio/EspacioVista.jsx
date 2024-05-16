@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import CardGrande from "../cardsImage/CardGrande";
 import CardChica from "../cardsImage/CardChica";
 import { Button } from "@mui/material";
-import "../Formulario.css";
 import { useParams } from "react-router-dom";
 import Search from "../../search/Search.jsx";
 import "./EspacioVista.css";
