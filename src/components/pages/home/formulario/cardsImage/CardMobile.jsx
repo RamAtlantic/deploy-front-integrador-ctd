@@ -26,7 +26,7 @@ export default function CardMobile({ space, arrayFotos }) {
   };
 
   return (
-    <Card className="cards" sx={{ width: 275 }}>
+    <Card className="cards" sx={{ width: 275, marginBottom: "5rem" }}>
       <CardActionArea onClick={() => openSpace()}>
         <CardMedia
           component="img"
