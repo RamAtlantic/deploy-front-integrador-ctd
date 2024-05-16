@@ -5,13 +5,12 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
-import "./Card.css";
 
-export default function ActionAreaCard({ datos }) {
+export default function CardMobile({ space, arrayFotos }) {
   const navigate = useNavigate();
 
   const openSpace = () => {
-    navigate(`/space/${datos.id}`);
+    navigate(`/space/${space.id}`);
   };
 
   return (
@@ -21,8 +20,8 @@ export default function ActionAreaCard({ datos }) {
           component="img"
           width="270px"
           height="140"
-          image={datos.fotos[0].rutaFoto} // Aquí asumo que siempre habrá al menos una foto
-          alt={datos.nombre}
+          image={arrayFotos[0].rutaFoto} // Aquí asumo que siempre habrá al menos una foto
+          alt={space.nombre}
         />
 
         <CardContent>
@@ -32,22 +31,29 @@ export default function ActionAreaCard({ datos }) {
             variant="h6"
             component="div"
           >
-            ID: #{datos.id}
+            ID: #{space.id}
           </Typography>
           <Typography
-            style={{ fontFamily: "Dosis", fontWeight: "600" }}
+            style={{ fontFamily: "Dosis", fontWeight: "600", margin: "1rem" }}
             gutterBottom
             variant="h6"
             component="div"
           >
-            {datos.nombre}
+            {space.nombre}
           </Typography>
           <Typography
-            style={{ fontFamily: "Dosis", textAlign: "right" }}
+            style={{ fontFamily: "Dosis", textAlign: "left", margin: "1rem" }}
             variant="body2"
             color="text.secondary"
           >
-            Cantidad fotos: {datos.fotos.length}
+            {space.descripcion}
+          </Typography>
+          <Typography
+            style={{ fontFamily: "Dosis", textAlign: "right", margin: "1rem" }}
+            variant="body2"
+            color="text.secondary"
+          >
+            Cantidad fotos: {arrayFotos.length}
           </Typography>
         </CardContent>
       </CardActionArea>

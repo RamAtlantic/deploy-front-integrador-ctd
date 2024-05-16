@@ -1,11 +1,21 @@
 import React from "react";
-
-import TextField from "@mui/material/TextField";
-import Button from "@mui/material/Button";
-import Box from "@mui/material/Box";
+import Listado from "./listado/Listado";
+import Search from "./search/Search";
 
 const Home = () => {
-  return <div></div>;
+  return (
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        flexDirection: "column",
+        alignItems: "center",
+      }}
+    >
+      <Search />
+      <Listado />
+    </div>
+  );
 };
 
 export default Home;
